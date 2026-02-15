@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<System name="PrestaShop">
+  <Parameters>
+    <Parameter id="0" name="Customer_Type" type="1">
+      <values>
+        <value>Guest</value>
+        <value>Registered</value>
+        <value>VIP</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="1" name="Product_Variant" type="1">
+      <values>
+        <value>Regular</value>
+        <value>Price Rule</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="2" name="Carrier" type="1">
+      <values>
+        <value>Standard</value>
+        <value>Express</value>
+        <value>No Carrier Available</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="3" name="Discount_Type" type="1">
+      <values>
+        <value>Product Level</value>
+        <value>Cart Level</value>
+        <value>No Discount</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="4" name="Country" type="1">
+      <values>
+        <value>Local</value>
+        <value>International</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="5" name="Quantity" type="1">
+      <values>
+        <value>Under 3 Items</value>
+        <value>3 Items Or More</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+  </Parameters>
+  <OutputParameters />
+  <Relations />
+  <Constraints>
+    <Constraint text="Discount_Type = &quot;Product Level&quot; =&gt; Product_Variant = &quot;Price Rule&quot;">
+      <Parameters>
+        <Parameter name="Discount_Type" />
+        <Parameter name="Product_Variant" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="Country = &quot;International&quot; =&gt; Carrier != &quot;No Carrier Available&quot;">
+      <Parameters>
+        <Parameter name="Country" />
+        <Parameter name="Carrier" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="Customer_Type = &quot;VIP&quot; =&gt; Discount_Type = &quot;Cart Level&quot;">
+      <Parameters>
+        <Parameter name="Customer_Type" />
+        <Parameter name="Discount_Type" />
+      </Parameters>
+    </Constraint>
+  </Constraints>
+  <Testset doi="2">
+    <Testcase TCNo="0">
+      <Value>1</Value>
+      <Value>Guest</Value>
+      <Value>Price Rule</Value>
+      <Value>Standard</Value>
+      <Value>Cart Level</Value>
+      <Value>International</Value>
+      <Value>3 Items Or More</Value>
+    </Testcase>
+    <Testcase TCNo="1">
+      <Value>2</Value>
+      <Value>Guest</Value>
+      <Value>Regular</Value>
+      <Value>Express</Value>
+      <Value>No Discount</Value>
+      <Value>Local</Value>
+      <Value>Under 3 Items</Value>
+    </Testcase>
+    <Testcase TCNo="2">
+      <Value>3</Value>
+      <Value>Guest</Value>
+      <Value>Price Rule</Value>
+      <Value>No Carrier Available</Value>
+      <Value>Product Level</Value>
+      <Value>Local</Value>
+      <Value>3 Items Or More</Value>
+    </Testcase>
+    <Testcase TCNo="3">
+      <Value>4</Value>
+      <Value>Registered</Value>
+      <Value>Regular</Value>
+      <Value>Standard</Value>
+      <Value>No Discount</Value>
+      <Value>International</Value>
+      <Value>Under 3 Items</Value>
+    </Testcase>
+    <Testcase TCNo="4">
+      <Value>5</Value>
+      <Value>Registered</Value>
+      <Value>Price Rule</Value>
+      <Value>Express</Value>
+      <Value>Product Level</Value>
+      <Value>International</Value>
+      <Value>3 Items Or More</Value>
+    </Testcase>
+    <Testcase TCNo="5">
+      <Value>6</Value>
+      <Value>Registered</Value>
+      <Value>Regular</Value>
+      <Value>No Carrier Available</Value>
+      <Value>Cart Level</Value>
+      <Value>Local</Value>
+      <Value>Under 3 Items</Value>
+    </Testcase>
+    <Testcase TCNo="6">
+      <Value>7</Value>
+      <Value>VIP</Value>
+      <Value>Price Rule</Value>
+      <Value>Standard</Value>
+      <Value>Cart Level</Value>
+      <Value>Local</Value>
+      <Value>Under 3 Items</Value>
+    </Testcase>
+    <Testcase TCNo="7">
+      <Value>8</Value>
+      <Value>VIP</Value>
+      <Value>Regular</Value>
+      <Value>Express</Value>
+      <Value>Cart Level</Value>
+      <Value>International</Value>
+      <Value>3 Items Or More</Value>
+    </Testcase>
+    <Testcase TCNo="8">
+      <Value>9</Value>
+      <Value>VIP</Value>
+      <Value>Regular</Value>
+      <Value>No Carrier Available</Value>
+      <Value>Cart Level</Value>
+      <Value>Local</Value>
+      <Value>Under 3 Items</Value>
+    </Testcase>
+    <Testcase TCNo="9">
+      <Value>10</Value>
+      <Value>Guest</Value>
+      <Value>Price Rule</Value>
+      <Value>Standard</Value>
+      <Value>Product Level</Value>
+      <Value>International</Value>
+      <Value>Under 3 Items</Value>
+    </Testcase>
+    <Testcase TCNo="10">
+      <Value>11</Value>
+      <Value>Guest</Value>
+      <Value>Price Rule</Value>
+      <Value>No Carrier Available</Value>
+      <Value>No Discount</Value>
+      <Value>Local</Value>
+      <Value>3 Items Or More</Value>
+    </Testcase>
+  </Testset>
+  <Header>
+    <Value />
+    <Value>Customer_Type</Value>
+    <Value>Product_Variant</Value>
+    <Value>Carrier</Value>
+    <Value>Discount_Type</Value>
+    <Value>Country</Value>
+    <Value>Quantity</Value>
+  </Header>
+  <Stat-Data>
+    <ExecutionTime>0.047</ExecutionTime>
+    <MaxDomainSize>3</MaxDomainSize>
+    <MinDomainSize>2</MinDomainSize>
+    <TotalNoOfCombination>89</TotalNoOfCombination>
+    <TotalNoOfTests>11</TotalNoOfTests>
+    <Algorithm>IPOG</Algorithm>
+  </Stat-Data>
+</System>
+

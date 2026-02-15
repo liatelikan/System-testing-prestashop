@@ -1,0 +1,18 @@
+# ACTS Test Suite Generation: Mon Dec 29 18:34:44 IST 2025
+#  '*' represents don't care value 
+# Degree of interaction coverage: 2
+# Number of parameters: 6
+# Maximum number of values per parameter: 3
+# Number of configurations: 11
+Customer_Type,Product_Variant,Carrier,Discount_Type,Country,Quantity
+Guest,Price Rule,Standard,Cart Level,International,3 Items Or More
+Guest,Regular,Express,No Discount,Local,Under 3 Items
+Guest,Price Rule,No Carrier Available,Product Level,Local,3 Items Or More
+Registered,Regular,Standard,No Discount,International,Under 3 Items
+Registered,Price Rule,Express,Product Level,International,3 Items Or More
+Registered,Regular,No Carrier Available,Cart Level,Local,Under 3 Items
+VIP,Price Rule,Standard,Cart Level,Local,Under 3 Items
+VIP,Regular,Express,Cart Level,International,3 Items Or More
+VIP,Regular,No Carrier Available,Cart Level,Local,Under 3 Items
+Guest,Price Rule,Standard,Product Level,International,Under 3 Items
+Guest,Price Rule,No Carrier Available,No Discount,Local,3 Items Or More
